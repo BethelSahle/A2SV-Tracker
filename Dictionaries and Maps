@@ -1,0 +1,15 @@
+if __name__ == '__main__':
+    n = int(input())  
+    phone_book = {}
+    for _ in range(n):
+        name, phone_number = input().split()
+        phone_book[name] = phone_number
+    try:
+        while True:
+            query = input().strip()
+            if query in phone_book:
+                print(f"{query}={phone_book[query]}")
+            else:
+                print("Not found")
+    except EOFError:
+        pass
