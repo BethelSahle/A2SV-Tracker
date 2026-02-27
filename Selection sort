@@ -1,0 +1,18 @@
+class Solution:
+    def selectionSort(self, arr):
+        n = len(arr)
+        i = 0
+
+        while i < n:
+            minimum = i 
+            j = i + 1
+            while j < n:
+                if arr[j] < arr[minimum]:
+                    minimum = j
+                j += 1
+
+            if minimum != i:
+                arr[i], arr[minimum] = arr[minimum], arr[i]
+
+            i += 1  
+        return arr
