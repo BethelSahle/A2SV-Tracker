@@ -1,19 +1,15 @@
-t = int(input())  
+t=int(input())
+for _ in range(t):
+  n=int(input())
+  a=list(map(int, input().split()))
+  a.sort()
+  for i in range(n-1):
+    if a[i+1] - a[i] > 1:
+      print("No")
+      break
+  else:
+    print("Yes")
 
-count = 0
-while count < t:
-    n = int(input())
-    a = list(map(int, input().split()))
+
     
-    a.sort()
-    
-    i = 1
-    p = "YES"
-    while i < n:
-        if a[i] - a[i-1] > 1:
-            p = "NO"
-            break
-        i += 1
-    
-    print(p)
-    count += 1
+
