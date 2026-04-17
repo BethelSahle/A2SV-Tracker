@@ -1,0 +1,25 @@
+class Solution:
+    def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
+        cars = sorted(zip(position, speed), reverse=True)
+        current_max=0
+        count=0
+
+        for pos, sp in cars:
+            time = (target-pos)/sp
+            if time > current_max:
+                count+=1
+                current_max=time
+                
+        return count 
+
+
+
+
+
+
+
+
+
+
+            
+        
