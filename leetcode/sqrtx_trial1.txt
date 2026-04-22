@@ -1,0 +1,8 @@
+class Solution:
+    def mySqrt(self, x: int) -> int:
+        mid=sqrt(x)
+        midd= math.floor(mid)
+        return midd
+        
+        
+        
