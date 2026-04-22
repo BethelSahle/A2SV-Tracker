@@ -1,0 +1,52 @@
+# class Solution:
+#     def searchRange(self, nums: List[int], target: int) -> List[int]:
+#         if not nums:
+#             return [-1,-1]
+#         ans=[-1,-1]
+#         l=0
+#         h=len(nums)-1
+#         while l<=h:
+#             m=l+(h-l)//2
+#             if nums[m]<target:
+#                 l=m+1
+#             else:
+#                 h=m-1
+#         if l<len(nums) and nums[l]==target:
+#             ans[0]=l
+#         l=0
+#         h=len(nums)-1
+#         while l<=h:
+#             m=l+(h-l)//2
+#             if nums[m]<=target:
+#                  l=m+1
+#             else:
+#                 h=m-1
+#         if h>=0 and nums[h]==target:
+#             ans[1]=h
+#         return ans
+
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        l = bisect_left(nums, target)
+
+        if l == len(nums) or nums[l] != target:
+            return [-1, -1]
+
+        h = bisect_right(nums, target) - 1
+
+        return [l, h]
+
+                 
+
+
+
+            
+
+
+
+                    
+
+
+               
+
+        
